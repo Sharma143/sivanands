@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Welcome to Sivananda Online</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./font/font.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Jomolhari&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="./css/custom.css" />
+</head>
+
+<body>
+    <section class="bak-clr">
+        <div class="container">
+            <div class="row pt-5 justify-content-center">
+                <div class="col col-md-6 col-sm-6 ">
+                    <img class=" pb-4 pt-3 w-100" src="img/heading1.png" alt="img" />
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col col-md-4 col-sm-4 pb-3">
+                    <img class=" pb-3 w-100" src="img/logo.png" alt="img" />
+                </div>
+            </div>
+        </div>
+        <div>
+            <a href="./index.html">
+                <img src="./img/home-btn.png">
+            </a>
+        </div>
+    </section>
+    <section class="bak1 ">
+        <div class="container ">
+            <div class="row justify-content-center pt-5">
+                <div class="col-lg-10 col-md-11 col-sm-9 pt-4 pl-5 pr-5 personalbackground">
+                    <h5 class="headingpersonal font-weight-bold">
+                        Sign Up
+                    </h5>
+                    <p>
+                        Please fill the following fields to proceed further.
+                    </p>
+                    <div class="row pb-4">
+                        <div class="col-md-4 col-sm-12">
+                            <label for="citizen">Country of your citizenship*</label>
+                            <select id="citizen" name="citizen" class="form-control"></select>
+                        </div>
+                    </div>
+                    <form name="registration" id="indiandonationform">
+                        <div id="showsignup">
+                            <div class="row ">
+                                <div class="col-lg-3 col-md-4 col-sm-12">
+                                    <label for="salutation">Salutation*</label>
+                                    <select id="salutation" name="salutation" class="form-control" placeholder="Sri">
+                                        <option value="">Select</option>
+                                        <option class="indian-salutation" value="Sri">Sri</option>
+                                        <option class="indian-salutation" value="Smt.">Smt.</option>
+                                        <option class="indian-salutation" value="Km.">Km.</option>
+                                        <option class="foreign-salutation" value="Mr.">Mr.</option>
+                                        <option class="foreign-salutation" value="Mrs.">Mrs.</option>
+                                        <option class="foreign-salutation" value="Ms.">Ms.</option>
+                                        <option value="M/S">Messers (M/S)</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-12">
+                                    <label for="fullname">Full Name*</label>
+                                    <input name="fullname" class="form-control" placeholder="Your Full Name here…"
+                                        id="fullname" />
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-12">
+                                    <label for="pannumber"></label>
+                                    <input name="pan_num" class="form-control" placeholder="PAN" id="pannumber" />
+                                </div>
+                                <div class="col-lg-3  col-md-4 col-sm-12 " id="passport-field">
+                                    <label for="passport">Passport Number</label>
+                                    <input name="passport" class="form-control" placeholder="Passport Number here…"
+                                        id="passport" />
+                                </div>
+                            </div>
+                            <hr class="dotted-line mt-5 mb-5" />
+                            <div class="row">
+                                <div class="col-md-4 col-sm-12">
+                                    <label for="address1">Address Line1*</label>
+                                    <input name="address_line1" class="form-control" id="address1"
+                                        placeholder="House/Flat No, Apartment name etc.," />
+                                </div>
+                                <div class="col-md-4 col-sm-12">
+                                    <label for="address2">Address Line2</label>
+                                    <input name="address_line2" class="form-control" id="address2"
+                                        placeholder="Street name, Area, Locality etc.," />
+                                </div>
+                                <div class="col-md-4 col-sm-12">
+                                    <label for="city">City *</label>
+                                    <input name="city" class="form-control" id="city" placeholder="City Name" />
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-4 col-sm-12">
+                                    <label for="pincode">Postal/ZipCode*</label>
+                                    <input name="pincode" type="number" class="form-control" id="pincode"
+                                        placeholder="Eg., 560078" />
+                                </div>
+                                <div class="col-md-4 col-sm-12">
+                                    <label for="state">State*</label>
+                                    <input id="state" name="state" class="form-control" readonly>
+                                </div>
+                                <div class="col-md-4 col-sm-12">
+                                    <label for="district">District*</label>
+                                    <input id="district" name="district" class="form-control" readonly>
+                                </div>
+                            </div>
+                            <div class="row mt-3" id="country-india">
+                                <div class="col-md-4 col-sm-12">
+                                    <label for="country">Country*</label>
+                                    <select id="country" name="country" class="form-control"></select>
+                                </div>
+                            </div>
+                            <hr class="dotted-line mt-5 mb-5" />
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                    <label for="email">Email*</label>
+                                    <input name="user_email_id" type="email" class="form-control" id="email"
+                                        placeholder="Email" />
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                    <label for="confirmmail">Confirm Email*</label>
+                                    <input name="confirmmail" type="email" class="form-control" id="confirmmail"
+                                        placeholder="Re-enter Email Address" />
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                    <label for="landline">Landline</label>
+                                    <input name="landline" type="number" class="form-control" id="landline"
+                                        placeholder="Eg., 0421 7364832" />
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-lg-4 col-md-4 col-sm-12  pb-3" id="countrycode">
+                                    <label for="code">Country Code*</label>
+                                    <select id="code" name="code" class="form-control"></select>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                    <label for="mobilenum">Mobile Number*</label>
+                                    <input name="mobile_number" type="number" class="form-control" id="mobilenumber"
+                                        placeholder="Mobile Number" value="mobilenum" />
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                    <label for="password">Password*</label>
+                                    <input name="password" type="password" class="form-control" id="password"
+                                        placeholder="Password" />
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                    <label for="confirPassword">Confirm Password*</label>
+                                    <input name="confirPassword" type="password" class="form-control"
+                                        id="confirPassword" placeholder="Re-enter Password" />
+                                </div>
+                            </div>
+                            <hr class=" dotted-line mt-5 mb-5" />
+                            <div class="row justify-content-center mb-4">
+                                <button id="signupbutton" type="submit">Sign Up</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- modal -->
+
+    <div class="modal fade" id="notice-modal" tabindex="-1" role="dialog" aria-labelledby="successerrormodalTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="successerrormodalTitle">Notice</h5>
+                </div>
+                <div class="modal-body">
+                    <p id="notice-modal-message"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary text-left" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/countries.js"></script>
+    <script src="js/jQueryvalidate.js"></script>
+    <script src="js/dial-json.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="js/signup.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../font/font.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Jomolhari&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../css/custom.css" />
+</head>
+
+<body onload="checkToken()">
+    <section class="bak-clr  pt-5 ">
+        <div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col col-md-6 col-sm-6 ">
+                        <img class=" pb-4 pt-3 w-100" src="../img/heading1.png" alt="img" />
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col col-md-4 col-sm-4 pb-3">
+                        <img class=" pb-3 w-100" src="../img/logo.png" alt="img" />
+                    </div>
+                </div>
+            </div>
+            <div>
+                <a href="../index.html">
+                    <img src="../img/home-btn.png">
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="bak1 ">
+        <div class="container">
+            <div class="row justify-content-center pt-5">
+                <div class="col col-md-10 col-sm-10 border">
+                    <p class="text-center m-0 p-4" id="experiedlink"></p>
+                    <div id="linkexpired">
+                        <h5 class="General font-weight-bold">
+                            Reset Passowrd
+                        </h5>
+                        <span class="pt-3 pb-3" id="tokenexpiremsg"></span>
+                        <form id="forgotpasswordform" name="password-register">
+                            <div class="row pt-3">
+                                <div class="col-md-6 col-sm12 align-self-start">
+                                    <label for="resetPassword">Password *</label>
+                                    <input name="resetPassword" type="password" class="form-control forgot-en"
+                                        id="resetPassword" placeholder="password" />
+                                    <span id="errMsgs" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-6 col-sm-12 align-self-start">
+                                    <label for="resetConfirmPassword">Confirm Pasword *</label>
+                                    <input name="resetConfirmPassword" type="password" class="form-control forgot-en"
+                                        id="resetConfirmPassword" placeholder="Re-enter Password" />
+                                </div>
+                            </div>
+                            <div class="row text-center pt-5">
+                                <div class="col-md-12 col-sm-12 pb-5">
+                                    <span id="errMsgs"></span>
+                                    <span id="successMsgs"></span>
+                                    <button type="button" class="forgotsubmit pt-2 pb-2" onclick="submitForm();"
+                                        disabled>
+                                        <span class=" forgotsubmitbutton text-center  mb-0">
+                                            Update Password
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- modal popup -->
+        <div class="modal" id="password-error-msg" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-center">Notice</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p id="passworderrormessage" class="text-center"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jQueryvalidate.js"></script>
+    <script src="../js/password.js"></script>
+</body>
+
+</html>

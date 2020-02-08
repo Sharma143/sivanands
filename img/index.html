@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stellarjet - Customer-Registration</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    
+    <script>
+        $(document).ready(function () {
+
+            $("#submit-btn").click(function () {
+                callPaymentGateway(100);
+            });
+
+
+        });
+
+        function callPaymentGateway(totalAmount) {
+            
+            const razKey = 'razor key goes here';
+
+            var options = {
+                "key": razKey,
+                "amount": totalAmount * 100, /// The amount is shown in currency subunits. Actual amount is ₹599.
+                "name": "Stellarjet",
+                "order_id": "", // Pass the order ID if you are using Razorpay Orders.
+                "currency": "INR", // Optional. Same as the Order currency
+                "description": "Purchase Description",
+
+                "handler": function (response) {
+                    //////$.blockUI();
+                    //////http://malsup.com/jquery/block/#demos
+                    ////$.blockUI({
+                    ////    message: '<p>Please wait...!</p>',
+                    ////    css: {
+                    ////        'padding-top': '1%'
+                    ////    }
+                    ////});
+                    updatePaymentCapture(response.razorpay_payment_id);
+                },
+                "prefill": {
+                    "name": "Customer Name",
+                    "email": "Customer Email",
+                    "contact": 123456789
+                },
+                "notes": {
+                    "address": 'Customer Address',
+                },
+
+            };
+            var rzp1 = new Razorpay(options);
+            rzp1.open();
+            e.preventDefault();
+        }
+
+        function updatePaymentCapture(paymentId) {
+            alert(paymentId);
+        }
+    </script>
+</head>
+<body>
+
+    <div>
+        <button class="btn confirm-btn-width" id="submit-btn">Confirm</button>
+    </div>
+    
+</body>
+
+</html>

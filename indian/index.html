@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../font/font.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Jomolhari&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap-datepicker.standalone.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/custom.css" />
+</head>
+
+<body onload="preFill()">
+    <section class="bak-clr">
+        <div class="row m-0 pt-2">
+            <div class="col">
+                <div id="logoutblock" class="row d-none justify-content-end">
+                    <div class="col-md-6 pr-5 text-white text-right">
+                        <p><span id="displayuser">User Name</span></p>
+                    </div>
+                    <div class="col-md-6 pl-5 ml-5 logoutIcon text-right">
+                        <p><span><i data-toggle="tooltip" id="logout" title="Logout" class="fa fa-sign-out"></i></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="logoutIcon" id="logoutButton" hidden>
+            <i class="fa fa-sign-out logFont" aria-hidden="true"></i>
+            <p class="logout pr-2">Logout</p>
+        </div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col col-md-6 col-sm-6 ">
+                    <img class=" pb-4 pt-3 w-100" src="../img/heading1.png" alt="img" />
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col col-md-4 col-sm-4 pb-3">
+                    <img class=" pb-3 w-100" src="../img/logo.png" alt="img" />
+                </div>
+            </div>
+        </div>
+        <div id="home-page">
+            <a href="../index.html">
+                <img src="../img/home-btn.png">
+            </a>
+        </div>
+    </section>
+    <section class="bak1">
+        <div class="container">
+            <div class="row ">
+                <div class="col-lg-12 col-md-12 col-sm-12 ">
+                    <ul class="nav nav-tabs mt-4 tab-margin" id="mytab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active show" id="personaldetail-tab" role="tab"
+                                aria-controls="personaldetail" aria-selected="true">Personal Details</a>
+                            <p class="text-center mb-0 personaldetaildone"><img class="ok-img" src="../img/ok.png"></p>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="indiandonation-tab" role="tab" aria-controls="indiandonation"
+                                aria-selected="false">Choose Donations
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="completepayment-tab" role="tab" aria-controls="completepayment"
+                                aria-selected="false">Complete Payment
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- personaldetail -->
+        <div class="tab-content" id="mytabcontent">
+            <div class="tab-pane fade active show" id="personaldetail" role="tabpanel"
+                aria-labelledby="personaldetail-tab">
+                <div class="container ">
+                    <div class="row pt-4 justify-content-center pb-5">
+                        <h5 class="indiandonationheading pt-3 font-weight-bold">Indian Donation</h5>
+                        <div class="col-lg-10 col-md-11 col-sm-9 pt-4 pl-5 pr-5 personalbackground">
+                            <h5 class="headingpersonal font-weight-bold mt-2">
+                                Personal Details
+                            </h5>
+                            <p>
+                                Please fill the following fields to proceed further
+                            </p>
+                            <form name="registration" id="indiandonationform">
+                                <div class="row mt-5">
+                                    <div class="col-md-3 col-sm-12">
+                                        <label for="salutation">Salutation*</label>
+                                        <select id="salutation" name="salutation" class="form-control" placeholder="Sri"
+                                            value="Select">
+                                            <option value="">Select</option>
+                                            <option value="Sri">Sri</option>
+                                            <option value="Smt.">Smt.</option>
+                                            <option value="Km.">Km.</option>
+                                            <option value="M/S">Messers (M/S)</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-5 col-sm-12">
+                                        <label for="fullname">Full Name*</label>
+                                        <input name="fullname" class="form-control" placeholder="Your Full Name here…"
+                                            id="fullname" />
+                                    </div>
+                                    <div class="col-md-4 col-sm-12">
+                                        <label for="pannumber">PAN*</label>
+                                        <input name="pan_num" class="form-control" placeholder="PAN" id="pannumber" />
+                                    </div>
+                                </div>
+                                <hr class="dotted-line mt-5 mb-5" />
+                                <div class="row">
+                                    <input type="hidden" name="address_id" id="address_id">
+                                    <div class="col text-right">
+                                        <a class="changeAddress" id="addresChange" onclick="changeAddres()">Change
+                                            Address</a>
+                                    </div>
+                                </div>
+                                <div class="popup-overlay">
+                                    <a class="close_Address btn btn-default text-right">X</a>
+                                    <div class="popup-content container">
+                                        <div id="list_address">
+                                            <div>
+                                                <p class="text-left pt-4 addAddress" onclick="addAddress()">+ Add New
+                                                    Address</p>
+                                            </div>
+                                            <div class="text-left" id="addressPopup"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-12">
+                                        <label for="address1">Address Line1*</label>
+                                        <input name="address_line1" class="form-control" id="address1"
+                                            placeholder="House/Flat No, Apartment name etc.," readonly />
+                                    </div>
+                                    <div class="col-md-4 col-sm-12">
+                                        <label for="address2">Address Line2</label>
+                                        <input name="address_line2" class="form-control" id="address2"
+                                            placeholder="Street name, Area, Locality etc.," readonly />
+                                    </div>
+                                    <div class="col-md-4 col-sm-12">
+                                        <label for="city">City *</label>
+                                        <input name="city" class="form-control" id="city" placeholder="City Name"
+                                            readonly />
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-md-4 col-sm-12">
+                                        <label for="pincode">Pincode*</label>
+                                        <input name="pincode" type="number" class="form-control" id="pincode"
+                                            placeholder="Eg., 560078" onblur="loadStateDistrict()" readonly />
+                                    </div>
+                                    <div class="col-md-4 col-sm-12">
+                                        <label for="state">State*</label>
+                                        <input id="state" name="state" class="form-control" readonly>
+                                    </div>
+                                    <div class="col-md-4 col-sm-12">
+                                        <label for="district">District*</label>
+                                        <input id="district" name="district" class="form-control" readonly>
+                                    </div>
+                                </div>
+                                <hr class="dotted-line mt-5 mb-5" />
+                                <div class="row">
+                                    <div class="col col-md-4 col-sm-12">
+                                        <label for="email">Email*</label>
+                                        <input name="user_email_id" type="email" class="form-control" id="email"
+                                            placeholder="Email" />
+                                    </div>
+                                    <div class="col-md-4 col-sm-12">
+                                        <label for="confirmmail">Confirm Email*</label>
+                                        <input name="confirmmail" type="email" class="form-control" id="confirmmail"
+                                            placeholder="Re-enter Email Address" />
+                                    </div>
+                                    <div class="col-md-4 col-sm-12">
+                                        <label for="landline">Landline</label>
+                                        <input name="landline" type="number" class="form-control" id="landline"
+                                            placeholder="Eg., 0421 7364832" />
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-md-4 col-sm-12 align-self-start">
+                                        <label for="mobilenum">Mobile Number*</label>
+                                        <input name="mobile_number" type="number" class="form-control" id="mobilenum"
+                                            placeholder="Mobile Number" readonly />
+                                    </div>
+                                </div>
+                                <hr class="dotted-line mt-5 mb-5" />
+                                <div class="row justify-content-center mb-4">
+                                    <button id="proceedbutton1" type="submit">Proceed</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- donationpage -->
+
+            <div class="tab-pane fade" id="indiandonation" role="tabpanel" aria-labelledby="indiandonation-tab">
+                <div class="container ">
+                    <h5 class="indiandonationheading font-weight-bold text-center">Indian Donation</h5>
+                    <form role="form" id="donations-form">
+                        <div class="row justify-content-center pb-5">
+                            <div class="col col-md-8 col-sm-8 pt-4 pl-5 pr-5 pb-4 donationbackground">
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12">
+                                        <h5 class="headingpersonal font-weight-bold mt-2">
+                                            General Donations
+                                        </h5>
+                                        <p>Please fill the following fields to donate</p>
+                                    </div>
+                                </div>
+                                <div id="general-donations-container"></div>
+                                <hr>
+                                <div class="row pt-3 ">
+                                    <div class="col col-md-4 col-sm-4 offset-md-5 text-left">
+                                        <h6 class="Totalgendonation">Total General Donations</h6>
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 text-left">
+                                        <span id="totalgeneraldonations"></span>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div>
+                                        <h5 class="headingpersonal font-weight-bold ">
+                                            Corpus Fund Donations (Mooldhan Fund)
+                                        </h5>
+                                        <p>Note: Donations under Corpus Fund are invested in the Banks and the annual
+                                            interest generated from the Principal Amount
+                                            is utilised towards the respective causes. Donation towards Corpus Fund
+                                            (Mooldhan Fund) should be of Rs.25,000/- or
+                                            above. As per Income Tax Act directive, it is mandatory for donors to give
+                                            their voluntary consent before their donation
+                                            is accepted as Corpus Fund. So please click the 'agree' button in Consent
+                                            Letter before proceeding for transaction.</p>
+                                    </div>
+                                </div>
+                                <div id="corpus-donations-container"></div>
+                                <hr>
+                                <div class="row pt-3">
+                                    <div class="col col-md-4 col-sm-4 offset-md-5">
+                                        <h6 class="Totalcorpdonation">Total Corpus Fund Donations</h6>
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 text-left">
+                                        <span id="totalcorpusdonations"></span>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row pt-3">
+                                    <div class="col-lg-4 col-md-4 col-sm-4 offset-md-5 ">
+                                        <h6 class="Totaldonation font-weight-bold mb-0">Total Donations</h6>
+                                        <span class="Fund ">(General Donations + Corpus Fund Donations)</span>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3">
+                                        <span id="totaldonationamount" class="font-weight-bold"></span>
+                                    </div>
+                                </div>
+                                <div class="row  mt-5 mb-4">
+                                    <div class="col col-md-12 text-right">
+                                        <button class="pt-1 pb-1 pr-5 pl-5" id="proceedbutton2" type="submit">Proceed to
+                                            Pay</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="completepayment" role="tabpanel" aria-labelledby="completepayment-tab">
+                complete</div>
+        </div>
+    </section>
+
+    <!-- model popups -->
+
+    <div class="modal fade" id="personaldetialmodal" tabindex="-1" role="dialog"
+        aria-labelledby="personaldetialmodaltitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content container">
+                <h3 class="headingpreview text-center pt-3">
+                    Preview
+                </h3>
+                <div class="modal-body">
+                    <p class="mb-0"><span id="displaypersonaldetails1"></span> <span
+                            id="displaypersonaldetails2"></span>
+                    </p>
+                    <p><span id="displaypersonaldetails3"> </span></p>
+                    <p class="mb-0"><span id="displaypersonaldetails7"> </span>, <span id="displaypersonaldetails6">
+                        </span>, <span id="displaypersonaldetails4"></span></p>
+                    <p><span id="displaypersonaldetails5"></span> - <span id="displaypersonaldetails9"></span>
+                    </p>
+                    <p class="mb-0"><span id="displaypersonaldetails8"></span></p>
+                    <p class="mb-0"><span id="displaypersonaldetails11"></span></p>
+                    <p><span id="displaypersonaldetails10"></span></p>
+                </div>
+                <div class="row">
+                    <div class="col col-md-12 col-sm-12 text-center">
+                        <button id="proceedbutton4" class="mt-4 mb-4">Proceed</button>
+                    </div>
+                </div>
+                <button type="button" class="close preview-close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class="close-button"><img class="close-img" src="../img/close.png"
+                            alt="img"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- bhandara popup -->
+    <div class="modal fade" id="bhandara-modal" tabindex="-1" role="dialog" aria-labelledby="bhandaramodalmodaltitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered bhandarawidth" role="document">
+            <div class="modal-content container">
+
+                <h3 class="headingbhandara text-center pt-3">
+                    Bhandara
+                </h3>
+                <div class="modal-body">
+                    <p>Please note that if the chosen date for Bhandara happens to be a fasting day like Ekadasi or any
+                        other occasion, then
+                        the Bhandara will be organised on the following day only. If more than one party opt for
+                        Bhandara on the same day, then
+                        it will be organised as a combined Bhandara. Similarly, if it so happens that the demand for
+                        Idli and Chutney is
+                        continuous for consecutive days, then the Ashram management shall intervene to decide the next
+                        suitable date for Idli
+                        and Chutney.</p>
+                    <form role="form" id="bhandara-details-form">
+                        <div class="form-row">
+                            <div class="form-group col-md-4 col-sm-12" data-provide="datepicker">
+                                <label for="bhandara-date">Date</label>
+                                <input data-date-autoclose="true" name="bhandara-date" id="bhandara-date"
+                                    class="form-control" data-date-format="dd-mm-yyyy" data-date-start-date="+7d"
+                                    data-date-end-date="+97d" data-provide="datepicker">
+                            </div>
+
+                            <div class="form-group col-md-4 col-sm-12">
+                                <label for="bhandara-occasion">Occasion</label>
+                                <input name="bhandara-occasion" type="text" class="form-control" id="bhandara-occasion">
+                            </div>
+                            <div class="form-group col-md-4 col-sm-12">
+                                <label for="bhandara-name">Name</label>
+                                <input name="bhandara-name" type="text" class="form-control" id="bhandara-name">
+                            </div>
+                        </div>
+
+                        <h5 class="text-center food-header pt-3 pb-4">Food Items</h5>
+                        <div id="bhandara-donations-container"></div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-7 col-sm-7">
+                                <h5 class="text-right totalbhanheadeing">Total Bhandara Donation</h5>
+                            </div>
+                            <div class="col-md-5 col-sm-5 text-right">
+                                <span id="bhandarafoodtotal"></span>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row mt-4 mb-4">
+                            <div class="col-md-12 col-sm-12 text-center">
+                                <button class="bhandaradone" type="submit">Done</button>
+                                <p class="text-danger d-none" id="bhandara-error-msg"> Please select any of the above to
+                                    continue.</p>
+                            </div>
+                        </div>
+                    </form>
+                    <button type="button" class="close" data-dismiss="modal" id="clear-bhandara" aria-label="Close">
+                        <span aria-hidden="true" class="close-button-bhandara "><img class="close-img-bhandara"
+                                src="../img/close.png" alt="img"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- //donation preview// -->
+    <div class="modal fade" id="donationpreview" tabindex="-1" role="dialog" aria-labelledby="donationpreviewtitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered donationpreviewidth" role="document">
+            <div class="modal-content pl-3 pr-3">
+                <h3 class="modal-title text-center pt-3 pb-3" id="donationpreviewtitle">Preview</h3>
+                <div class="modal-body">
+                    <!-- General Donations -->
+                    <div class="row" id="generalheading">
+                        <div class="col col-md-12">
+                            <p class="previewgenralbak">General Donations</p>
+                        </div>
+                    </div>
+                    <div id="generalbody"></div>
+                    <!-- Corpus Donations -->
+                    <div class="row" id="corpusheading">
+                        <div class="col col-md-12">
+                            <p class="previewcorpudbak">Corpus Donations</p>
+                        </div>
+                    </div>
+                    <div id="corpusbody"></div>
+                    <hr class="dashed-border">
+                    <div class="row" id="previewtotaldonation">
+                        <div class="col-md-7 text-right">
+                            <h5>Total Donation</h5>
+                            <p class="text-right donation-para" id="genCorpTotal">(General Donations +
+                                Corpus Fund Donations)</p>
+                        </div>
+                        <div class="col-md-2">
+                            <hr>
+                        </div>
+                        <div class="col-md-3 text-center" id="previewtotaldonamount"></div>
+                    </div>
+                    <hr class="dashed-border">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 text-center">
+                            <button id="proceedbutton3" class="mt-4 mb-3">Proceed</button>
+                        </div>
+                    </div>
+                    <button type="button" id="proceed-consent-letter" class="close" data-dismiss="modal"
+                        aria-label="Close">
+                        <span aria-hidden="true" class="close-donation-preview"><img class="close-img2"
+                                src="../img/close.png" alt="img"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- //consent letter// -->
+
+    <div class="modal fade" id="consentletter" tabindex="-1" role="dialog" aria-labelledby="consentlettertitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered consentwidth" role="document">
+            <div class="modal-content">
+                <h3 class="modal-title text-center pt-4" id="consentlettertitle">Consent Letter</h3>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col col-md-12 col-sm-12">
+                            <p class="mb-0 font-weight-bold to consent-para">To</p>
+                            <p class="consent-para">The General Secretary,<br>
+                                The Divine Life Society,<br>
+                                PO Shivanandanagar – 249 192.<br>
+                                Dist Tehri Garhwal,Uttarakhand. India.</p>
+                            <p class="consent-para">Revered Swamiji,</p>
+                            <p class="consent-para">Om Namo Narayanaya.</p>
+                            <p class="consent-para">Salutations.</p>
+                            <p class="consent-para">Kindly accept our humble offering of <span id="consenttotalamount"
+                                    class="font-weight-bold"></span> offered
+                                through Online donation on
+                                <span id="consentletterdate" class="font-weight-bold"></span>. I would like to donate
+                                the
+                                amount towards <span class="font-weight-bold" id="selectedcorpusitems"></span>
+                                and hereby
+                                give my consent to take the amount into the above mentioned Corpus (Mooldhan) Fund(s).
+                                The
+                                same may be accepted.</p>
+                        </div>
+                    </div>
+                    <form name="consent-register">
+                        <div id="consentauthorizationblock">
+                            <div class="row">
+                                <div class="col col-md-12 col-sm-12 mt-3">
+                                    <h6>Authorized Representative</h6>
+                                </div>
+                            </div>
+
+                            <div class="row mt-3 mb-5">
+                                <div class="col col-md-3 col-sm-3">
+                                    <select id="consent-salutation" name="consentsalutation" class="form-control"
+                                        placeholder="Sri">
+                                        <option value="">Select</option>
+                                        <option value="con-Mr">Mr.</option>
+                                        <option value="con-Mrs.">Mrs.</option>
+                                        <option value="con-Ms.">Ms.</option>
+                                    </select>
+                                </div>
+                                <div class="col col-md-7 col-sm-7">
+                                    <input name="consentfullname" class="form-control"
+                                        placeholder="Your Full Name here…" id="consent-fullname" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row  mt-3">
+                            <div class="col-auto pr-0">
+                                <label for="consentcheck" class="checkmark-container">
+                                    <p>I have read and understood.
+                                    </p>
+                                    <input id="consentcheck" name="consentcheck" type="checkbox">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-md-12 col-sm-12 text-center">
+                                <button class="agreebutton mt-5 mb-5" id="agreedonation" disabled>Agree</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <button type="button" class="close close-button-consent" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class=""><img class="close-img" src="../img/close.png" alt="img"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- //success & error modals// -->
+
+
+    <div class="modal fade" id="notice-modal" tabindex="-1" role="dialog" aria-labelledby="successerrormodalTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="successerrormodalTitle">Notice</h5>
+                </div>
+                <div class="modal-body">
+                    <p id="notice-modal-message"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary text-left" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" tabindex="-1" id="loading-payment" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <div class="text-center">
+                        <h4>Processing...</h4>
+                    </div>
+                    <div class="text-center" role="status">
+                        <img src="../img/Spinner-1s-200px.svg" alt="">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="neft-message-modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-center">NEFT Transaction</h5>
+                </div>
+                <div class="modal-body">
+                    <p id="neft-message">
+                    </p>
+                    <p id="neft-account-number"></p>
+                    <p id="neft-ifsc-number"></p>
+                    <p id="neft-transaction-amount"></p>
+                    <div class="row justify-content-center">
+                        <div class="col-auto">
+                            <button type="button" id="neft-cancel-transaction"
+                                class="popup-preceed-button btn d-none">Cancel Transaction</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jQueryvalidate.js"></script>
+    <script src="../js/dial-json.js"></script>
+    <script src="../js/bootstrap-datepicker.min.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="../js/indian.js"></script>
+
+
+</body>
+
+</html>

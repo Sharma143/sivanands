@@ -1,0 +1,876 @@
+body,
+p,
+a,
+button,
+span {
+  font-family: "SF Pro Display";
+  font-weight: normal;
+}
+.datepicker-inline {
+  display: none !important;
+}
+
+.datepicker table tr td.new,
+.datepicker table tr td.old {
+  color: #333;
+}
+
+.datepicker table tr td.disabled,
+.datepicker table tr td.disabled:hover {
+  color: #e7e7e7;
+}
+.bak-clr {
+  background: rgba(220, 114, 0, 1);
+  background: -moz-linear-gradient(
+    top,
+    rgba(220, 114, 0, 1) 58%,
+    rgba(252, 183, 10, 1) 147%
+  );
+  background: -webkit-gradient(
+    left top,
+    left bottom,
+    color-stop(0%, rgba(220, 114, 0, 1)),
+    color-stop(100%, rgba(252, 183, 10, 1))
+  );
+  background: -webkit-linear-gradient(
+    top,
+    rgba(220, 114, 0, 1) 58%,
+    rgba(252, 183, 10, 1) 147%
+  );
+  background: -o-linear-gradient(
+    top,
+    rgba(220, 114, 0, 1) 58%,
+    rgba(252, 183, 10, 1) 147%
+  );
+  background: -ms-linear-gradient(
+    top,
+    rgba(220, 114, 0, 1) 58%,
+    rgba(252, 183, 10, 1) 147%
+  );
+  background: linear-gradient(
+    to bottom,
+    rgba(220, 114, 0, 1) 58%,
+    rgba(252, 183, 10, 1) 147%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dc7200', endColorstr='#fcb70a', GradientType=0 );
+}
+.kind-attention-header {
+  font-family: "Jomolhari", serif;
+  color: #dc7000;
+  font-size: 26px;
+}
+.Foreign {
+  font-family: "Jomolhari", serif;
+  font-size: x-large;
+  border: 1px #e97601;
+  background-color: #e97601;
+  color: #fff;
+}
+#indian-donation-button:hover {
+  text-decoration: none;
+}
+.fdonation:hover {
+  text-decoration: none;
+}
+.note {
+  font-family: "Jomolhari", serif;
+  color: #bc6000;
+}
+.bak2 {
+  background-image: url(../img/dea55ad8-551b-4e75-b790-0af6bb994ff7.png);
+  background-repeat: repeat;
+  background-color: #ffeed5;
+  background-size: 175px;
+}
+.bak {
+  background-image: url(../img/dea55ad8-551b-4e75-b790-0af6bb994ff7.png);
+  background-repeat: repeat;
+  background-color: rgba(255, 255, 255, 0.6);
+  background-size: 175px;
+}
+.para {
+  font-size: 17px;
+}
+.login {
+  color: #dc7000 !important;
+  font-family: "Jomolhari", serif !important;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.login-popup {
+  max-width: 50% !important;
+}
+.login-button,
+.submit-button {
+  color: #fff;
+  background-color: #dc7000 !important;
+  border-color: #dc7000 !important;
+  font-weight: bold !important;
+  border-radius: 0px !important;
+}
+.noaccount {
+  font-size: 1.2rem !important;
+}
+.vertical-line {
+  border-left: 1px dashed #66666652;
+}
+.signup-link {
+  color: #dc7000;
+  text-decoration-line: underline;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.9rem !important;
+}
+#signupbutton {
+  font-family: "Jomolhari", serif;
+  font-size: 17px;
+  background-color: #e97601;
+  border: 0px #e97601;
+  color: #ffffff;
+  width: 389px;
+  height: 45px;
+  cursor: pointer;
+}
+.Forgot-Password,
+.Forgot-Password:hover {
+  color: #000 !important;
+  text-decoration-line: underline !important;
+  cursor: pointer;
+  font-size: 1rem !important;
+}
+.login2 {
+  color: #000;
+  text-decoration-line: underline !important;
+  cursor: pointer;
+}
+.guest-button {
+  background-color: #dc7000;
+  border-color: #dc7000;
+  font-weight: bold;
+  width: 93% !important;
+  border-radius: 0px !important;
+  color: #ffff;
+}
+.guest-button:hover {
+  background-color: #dc7000;
+  border-color: #dc7000;
+}
+.guest2-button {
+  background-color: #dc7000;
+  border-color: #dc7000;
+  font-weight: bold;
+  width: 93% !important;
+  border-radius: 0px !important;
+  color: #ffff;
+}
+.guest2-button:hover {
+  background-color: #dc7000;
+  border-color: #dc7000;
+}
+.checkmark-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.form-control[readonly] {
+  background-color: transparent !important;
+}
+
+/* Hide the browser's default checkbox */
+.checkmark-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 17px;
+}
+
+/* On mouse-over, add a grey background color */
+.checkmark-container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkmark-container input:checked ~ .checkmark {
+  background-color: #dc7200;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkmark-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkmark-container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 7px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(35deg);
+  -ms-transform: rotate(35deg);
+  transform: rotate(35deg);
+}
+
+.general-donation.donation-amount,
+.corpus-donation.donation-amount {
+  visibility: hidden;
+}
+
+.general-donation.donation-amount.show,
+.corpus-donation.donation-amount.show {
+  visibility: visible;
+}
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+  color: #000 !important;
+  border-top: 2px solid #dc7000 !important;
+  background-color: transparent;
+  border-color: transparent;
+  font-weight: bold;
+}
+a.personal-heading:not([href]):not([tabindex]) {
+  color: #dc7000 !important;
+  text-decoration: none;
+}
+#completepayment-tab {
+  color: #93928f !important;
+}
+#personaldetail-tab {
+  color: #dc7000 !important;
+}
+.form-control {
+  border-radius: 0px !important;
+}
+.form-control {
+  height: calc(2.95rem + 2px);
+  line-height: 1.87;
+  border: 1px solid #d8d8d8;
+}
+/* li.nav-item {
+  border-top: 1px solid;
+} */
+.nav-tabs .nav-link {
+  border-right-color: transparent !important;
+  border-left-color: transparent !important;
+  border-bottom-color: transparent !important;
+  border-top: 2px solid #93928f !important;
+  border-radius: 0px !important;
+  font-weight: bold;
+  /* color: #dc7000 !important; */
+  color: #93928f !important;
+}
+/* .nav-link {
+  color: black !important;
+  border-bottom: 1px soild #000 !important;
+}*/
+.nav-tabs {
+  border-bottom: transparent !important;
+}
+.personalimg {
+  height: 23px;
+}
+.headingpersonal {
+  font-family: "Jomolhari", serif;
+  color: #dc7000;
+  font-size: 1.7rem;
+}
+#proceedbutton1 {
+  font-family: "Jomolhari", serif;
+  font-size: 17px;
+  background-color: #e97601;
+  border: 0px #e97601;
+  color: #ffffff;
+  width: 389px;
+  height: 45px;
+  cursor: pointer;
+}
+.personalbackground {
+  background-color: #f8f8f8;
+}
+.headingpreview {
+  color: #dc7000;
+  font-family: "Jomolhari", serif;
+  font-weight: bold;
+}
+.personaldetaildone {
+  display: none;
+}
+/* //donationpage// */
+
+.donationbackground {
+  background-color: #f8f8f8 !important;
+}
+#totalgeneraldonations,
+#totalcorpusdonations,
+#totaldonationamount {
+  font-size: 20px;
+}
+.dashed-border {
+  border-style: dashed !important;
+}
+.bak1 {
+  background-image: url(../img/dea55ad8-551b-4e75-b790-0af6bb994ff7.png);
+  background-repeat: repeat;
+  background-color: #ffeed5;
+  min-height: 610px;
+  background-size: 175px;
+}
+.ok-img {
+  width: 26px;
+  height: 26px;
+}
+/* .amountbox {
+  visibility: hidden;
+} */
+.enteramount {
+  border-radius: 0px;
+}
+.error {
+  color: red;
+}
+.Totaldonation {
+  font-family: "Jomolhari", serif;
+  font-size: 20px;
+}
+#previewtotaldonation h5 {
+  font-family: "Jomolhari", serif;
+  font-weight: bold;
+}
+.Fund {
+  color: #757575;
+  font-size: 14px;
+}
+.Totalgendonation {
+  font-family: "Jomolhari", serif;
+  font-size: 20px;
+}
+.Totalcorpdonation {
+  font-family: "Jomolhari", serif;
+  font-size: 20px;
+}
+#proceedbutton2 {
+  font-weight: bold;
+  font-size: 17px;
+  background-color: #e97601;
+  border: 0px #e97601;
+  color: #ffffff;
+  cursor: pointer;
+}
+#proceedbutton3 {
+  color: #fff;
+  background-color: #dc7000;
+  border-color: #dc7000;
+  font-weight: bold;
+  padding: 0.4rem 7rem !important;
+  border-radius: 0px !important;
+  border: none !important;
+  cursor: pointer;
+}
+#proceedbutton4 {
+  color: #fff;
+  padding: 0.4rem 6rem;
+  background-color: #dc7000;
+  border: #dc7000;
+  font-weight: 600;
+  cursor: pointer;
+}
+.headingbhandara {
+  font-family: "Jomolhari", serif;
+  color: #dc7000;
+  font-size: 29px;
+  font-weight: bold;
+}
+.bhandarawidth {
+  max-width: 681px;
+}
+.food {
+  font-family: "Jomolhari", serif;
+  color: #dc7000;
+  font-weight: bold;
+}
+#bhandaradone {
+  background-color: #dc7000;
+  border: 0px #dc7000;
+  color: #ffffff;
+  width: 295px;
+  height: 46px;
+  font-weight: 600;
+}
+.bhandaradone {
+  color: #fff;
+  background-color: #dc7000;
+  border-color: #dc7000;
+  font-weight: bold;
+  padding: 0.4rem 7rem !important;
+  border-radius: 0px !important;
+  border: none !important;
+}
+.totalbhanheadeing {
+  font-family: "Jomolhari", serif;
+  font-weight: bold;
+}
+.bhanamount {
+  border-color: transparent;
+  background-color: #fff !important;
+  cursor: not-allowed;
+}
+.totalbhanheadeing {
+  font-family: "Jomolhari", serif;
+}
+#donationpreviewtitle {
+  font-family: "Jomolhari", serif;
+  color: #dc7000;
+  font-weight: bold;
+}
+
+.previewgenralbak,
+.previewcorpudbak {
+  background-color: #f7f7f7;
+  color: #9d9d9d;
+}
+.donationpreviewidth {
+  max-width: 650px !important;
+}
+.consentwidth {
+  max-width: 950px !important;
+}
+.donation-para {
+  color: #757575;
+}
+.consent-para {
+  font-size: 0.9rem;
+}
+.agreebutton {
+  font-size: 17px;
+  background-color: #80808063;
+  border: 0px #e97601;
+  color: #ffffff;
+  width: 295px;
+  height: 46px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.to {
+  font-family: "Jomolhari", serif;
+}
+.amount-3 {
+  cursor: not-allowed;
+  background-color: #fff !important;
+}
+#state {
+  cursor: not-allowed;
+  background-color: #fff;
+}
+/* #country {
+  cursor: not-allowed;
+  background-color: #e9ecef00;
+} */
+#district {
+  cursor: not-allowed;
+  background-color: #fff;
+}
+#mobilenum {
+  cursor: not-allowed;
+}
+#consentauthorizationblock {
+  display: none;
+}
+.close-button {
+  position: absolute !important;
+  right: -38px !important;
+  top: 0px !important;
+}
+.close-button2 {
+  position: absolute !important;
+  right: -51px !important;
+  top: 3px !important;
+}
+#proceed-consent-letter {
+  position: absolute !important;
+  top: -75px !important;
+  right: -51px !important;
+}
+#donation-0 {
+  cursor: auto;
+  background-color: #fff !important;
+}
+.close-button3 {
+  position: absolute !important;
+  right: 24px !important;
+  top: 28px !important;
+}
+.close-button-consent {
+  position: absolute !important;
+  right: -38px !important;
+  top: 0px !important;
+}
+.close-button-preview {
+  position: absolute !important;
+  right: -33px !important;
+  top: 0px !important;
+}
+.close-img {
+  width: 28px;
+}
+.close-img2 {
+  width: 28px;
+}
+.close-img3 {
+  width: 20px;
+}
+.close-img-index {
+  width: 29px !important;
+  margin-right: 18px;
+}
+#consentlettertitle {
+  font-family: "Jomolhari", serif;
+  color: #dc7000;
+  font-weight: bold;
+}
+.indiandonationheading {
+  font-family: "Jomolhari", serif;
+  color: #dc7000;
+  font-size: 1.7rem;
+}
+.changeAddress {
+  color: #f17f09 !important;
+  text-decoration: underline !important;
+  cursor: pointer;
+}
+.addAddress {
+  color: #e97601;
+  cursor: pointer;
+  font-weight: 500;
+  font-family: "SF Pro Display";
+  font-size: 15px;
+}
+.close_Address {
+  float: right;
+  background: #f17f09 !important;
+  color: #fff !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+}
+.popup-overlay {
+  visibility: hidden;
+  position: absolute;
+  background: #ffffff;
+  border: 0px solid #666666;
+  width: 61%;
+  height: 288px;
+  left: 37%;
+  border-radius: 8px;
+  z-index: 99;
+}
+.popup-overlay.active {
+  visibility: visible;
+  text-align: center;
+}
+#addressPopup {
+  height: 207px;
+  overflow-y: scroll !important;
+  z-index: 999 !important;
+}
+#addressPopup a:hover {
+  color: #bc6000 !important;
+  cursor: pointer;
+}
+.logoutIcon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #fff;
+}
+.logFont {
+  font-size: 30px;
+  cursor: pointer;
+}
+#logout {
+  cursor: pointer;
+}
+.logout {
+  visibility: hidden;
+}
+.logoutIcon:hover .logout {
+  visibility: visible !important;
+}
+#displayuser {
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  col-md-6 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+@media (max-width: 768px) {
+  .tab-margin {
+    width: 77% !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .close-button-consent {
+    position: absolute !important;
+    right: 0px !important;
+    top: -40px !important;
+  }
+}
+
+@media (max-width: 425px) {
+  .login-popup {
+    max-width: 100% !important;
+  }
+  .vertical-line {
+    flex-basis: auto;
+    padding-bottom: 35px;
+  }
+  .close {
+    position: absolute;
+    top: -400px;
+    right: 41px;
+  }
+  .close-button {
+    position: absolute !important;
+    right: -42px !important;
+    top: -5px !important;
+  }
+  .nav-tabs {
+    justify-content: center;
+  }
+  .close-button2 {
+    position: absolute !important;
+    right: -16px !important;
+    top: -31px !important;
+  }
+  #proceed-consent-letter {
+    position: absolute !important;
+    top: -106px !important;
+    right: -16px !important;
+  }
+  .consent-close-preview {
+    position: absolute;
+    top: 0;
+    right: 6px;
+  }
+  .close-button3 {
+    position: absolute !important;
+    right: 9px !important;
+    top: 8px !important;
+  }
+  .close-button-consent {
+    position: absolute !important;
+    top: 0px !important;
+    right: 0px !important;
+  }
+  .currencytype {
+    text-align: initial !important;
+  }
+  .donation-amount {
+    text-align: initial !important;
+  }
+  .vertical-line {
+    padding-top: 0px !important;
+  }
+  .close-button-preview {
+    position: absolute !important;
+    right: 1px !important;
+    top: -34px !important;
+  }
+  #clear-bhandara {
+    position: absolute;
+    top: 3px;
+    right: 41px;
+  }
+  .preview-close {
+    position: absolute;
+    top: -28px;
+    right: 41px;
+  }
+  #previewtotaldonation,
+  #previewtotaldonamount {
+    text-align: right !important;
+  }
+}
+@media (max-width: 320px) {
+  #proceedbutton4 {
+    width: 241px;
+  }
+}
+/* thankyoupage */
+.thankyou-page-background-color {
+  background-image: url(../img/dea55ad8-551b-4e75-b790-0af6bb994ff7.png);
+  background-repeat: repeat;
+  background-color: #ffeed5;
+  background-size: 175px;
+}
+.view-receipt-button:hover {
+  border: 1px solid #dc7000;
+  color: #fff;
+  background-color: #dc7000;
+}
+.ok2-img {
+  margin-top: 20vh;
+  width: 150px;
+}
+.thankyou-h2 {
+  color: #000;
+  font-family: "Jomolhari", serif;
+  font-weight: bold;
+}
+.thankyou-h1 {
+  color: #dc7000;
+  font-family: "Jomolhari", serif;
+  font-weight: bold;
+}
+.view-receipt-button {
+  border: 1px solid #dc7000;
+  color: #fff;
+  background-color: #dc7000;
+  padding: 0.6rem 6rem;
+  border-radius: 2px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+.Mycontainer2:hover input ~ .checkmark2 {
+  background-color: #ccc;
+}
+.checkmark2 {
+  position: absolute;
+  top: 0;
+  left: 9px;
+  height: 22px;
+  width: 22px;
+  background-color: #eee;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.Mycontainer2 input:checked ~ .checkmark2 {
+  background-color: #dc7000 !important;
+}
+.Mycontainer2 .checkmark2:after {
+  left: 8px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(35deg);
+}
+/* neft */
+.popup-preceed-button {
+  color: #fff;
+  padding: 0.4rem 6rem;
+  background-color: #dc7000;
+  border: #dc7000;
+  font-weight: 600;
+}
+#address1 {
+  background-color: #ffff;
+  cursor: not-allowed;
+}
+#address2 {
+  background-color: #ffff;
+  cursor: not-allowed;
+}
+#city {
+  background-color: #ffff;
+  cursor: not-allowed;
+}
+#pincode {
+  background-color: #ffff;
+  cursor: not-allowed;
+}
+#incorrect-login {
+  display: none;
+  color: red;
+}
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.close-button-bhandara {
+  position: absolute !important;
+  right: -50px !important;
+  top: -58px !important;
+}
+.food-header {
+  color: #dc7000;
+  font-family: "Jomolhari", serif;
+  font-weight: bold;
+}
+.close-img-bhandara {
+  width: 30px;
+}
+.preview-close-btn {
+  position: absolute;
+  top: -69px;
+  right: 0;
+}
+.forgotsubmit {
+  box-shadow: none;
+  border: solid 2px #e97601;
+  color: #fff;
+  background-color: #e97601;
+  font-weight: bold;
+  border-radius: 0px !important;
+}
+.forgotsubmit:disabled {
+  opacity: 0.5;
+}
+.border {
+  border: 1px solid #f8f8f8 !important;
+  background: #f8f8f8 !important;
+}
+.General {
+  font-family: "Jomolhari", serif;
+  color: #dc7000;
+  font-size: 1.7rem;
+}
+.tab-margin {
+  width: 47%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.currency-font {
+  font-weight: bold;
+  font-size: 20px;
+}
+.rupee {
+  font-size: 20px;
+}
+.view-receipt-button:hover {
+  text-decoration: none !important;
+}

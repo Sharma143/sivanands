@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Welcome to Sivanandha</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./font/font.css" />
+    <link href="https://fonts.googleapis.com/css?family=Jomolhari&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="./css/custom.css" />
+</head>
+
+<body class="thankyou-page-background-color" onload="thankyouPage()">
+    <section>
+        <div>
+            <a href="./index.html">
+                <img class="mt-5" src="./img/home-btn.png" />
+            </a>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <img class="ok2-img" src="./img/ok.png" alt="img" />
+                    <h2 class="thankyou-h1 pt-3">Thanks for your Donation!</h2>
+                    <h4 class="thankyou-h2 pt-2 pb-5">
+                        Transaction Id: <span id="paymentTransID"></span>
+                    </h4>
+                    <a href="" target="_blank" id="invoice" class="view-receipt-button mt-5">View Receipt</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+<script src="js/jquery-3.3.1.slim.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/thankyou.js"></script>
+
+</html>
